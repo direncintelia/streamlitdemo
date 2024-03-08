@@ -10,19 +10,11 @@ def get_data():
 # Display the dataframe 
 df = get_data()
 
-min_year = int(df['price'].min())
-max_year = int(df['price'].max())
-
 countries = df['country'].unique()
 
 '## By country'
 country = st.selectbox('country', countries)
 df[df['country'] == country]
-
-
-'## By price'
-price = st.slider('price', min_price, max_price)
-df[df['Price'] == price]
 
 values = st.slider(
     'Select a range of values',
